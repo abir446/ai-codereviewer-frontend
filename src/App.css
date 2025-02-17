@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  padding: 2.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+main .left, main .right {
+  flex-basis: 50%;
+  border-radius: 10px;
+  min-height: 300px;
+}
+
+main .left {
+  background-color: #313131;
+  position: relative;
+}
+
+main .right {
+  background-color: #555555;
+  padding: 2rem;
+  font-size: 1.2rem;
+  overflow: auto;
+}
+
+main .left .review {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: aqua;
+  color: black;
+  padding: 5px;
+  user-select: none;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.left .code, .code pre, .code pre code {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  border-radius: 0.7rem;
+  overflow-x: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+
+  main .left, main .right {
+    flex-basis: auto;
+    width: 100%;
+    min-height: 200px;
+  }
+
+  main .right {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  main .left .review {
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 0.9rem;
+    padding: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 0.5rem;
+    gap: 0.3rem;
+  }
+
+  main .right {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+
+  main .left .review {
+    bottom: 0.5rem;
+    right: 0.5rem;
+    font-size: 0.8rem;
+    padding: 3px;
+  }
+}
