@@ -12,20 +12,26 @@ function App() {
 }`);
 
   const [review, setReview] = useState("");
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     prism.highlightAll();
   });
 
   const codeReview = async () => {
-    const response = await axios.post("https://ai-codereviewer-backend.onrender.com/ai/get-review", {
-      code,
-    });
+    setLoading(!loading);
+    const response = await axios.post(
+      "https://ai-codereviewer-backend.onrender.com/ai/get-review",
+      {
+        code,
+      }
+    );
     console.log(response.data);
     setReview(response.data);
+    setLoading(false);
   };
   return (
     <>
-    <h1>AI CODE REVIEWER</h1>
+      <h1>AI CODE REVIEWER</h1>
       <main>
         <div className="left">
           <div className="code">
@@ -47,6 +53,7 @@ function App() {
           </div>
         </div>
         <div className="right">
+          {loading && <h1>Checking Code using Gemini 2.0 Flash</h1>}
           <Markdown>{review}</Markdown>
         </div>
       </main>
