@@ -24,12 +24,12 @@ main .left, main .right {
 }
 
 main .left {
-  background-color: #313131;
+  background-color: #333333;
   position: relative;
 }
 
 main .right {
-  background-color: #555555;
+  background-color: #474747;
   padding: 2rem;
   font-size: 1.2rem;
   overflow: auto;
@@ -52,7 +52,7 @@ main .left .review {
   width: 100%;
   margin: 0;
   border-radius: 0.7rem;
-  overflow-x: auto;
+  overflow: scroll;
 }
 
 /* Responsive Design */
@@ -99,4 +99,10 @@ main .left .review {
     font-size: 0.8rem;
     padding: 3px;
   }
+}
+
+h1{
+  text-align: center;
+  margin: 5px;
+  color: rgb(146, 138, 182);
 }

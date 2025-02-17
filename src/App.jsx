@@ -25,6 +25,7 @@ function App() {
   };
   return (
     <>
+    <h1>AI CODE REVIEWER</h1>
       <main>
         <div className="left">
           <div className="code">
